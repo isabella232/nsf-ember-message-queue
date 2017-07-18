@@ -12,4 +12,4 @@ npm install nsf-open/nsf-ember-message-queue#commit-ish --save-dev
 ```
 
 ## Usage
-Let's say you have two views: one which displays a user's current information, and a second which allows the user to edit that information.
+More in depth documentation can be found in [the wiki](https://github.com/nsf-open/nsf-ember-message-queue/wiki).
