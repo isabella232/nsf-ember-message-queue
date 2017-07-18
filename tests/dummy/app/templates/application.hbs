@@ -1,5 +1,16 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<nav class="navbar navbar-default">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li>{{link-to 'Home' 'index'}}</li>
+            <li>{{link-to 'Demo' 'demo.form'}}</li>
+        </ul>
+    </div>
+</nav>
 
-{{outlet}}
+<div class="container">
+    <p class="text-muted"><small>Target #2 (application.hbs):</small></p>
+    {{message-container data-test-id='message-container-application'}}
+    {{outlet}}
+</div>
+
+

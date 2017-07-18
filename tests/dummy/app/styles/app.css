@@ -1,0 +1,6 @@
+.message-container {
+    background-color: #EEE;
+    border: dashed 1px #DDD;
+    margin-bottom: 20px;
+    padding: 20px 15px 0 15px;
+}

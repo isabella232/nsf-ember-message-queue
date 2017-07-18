@@ -1,0 +1,9 @@
+{{#each sortedMessages as |bucket|}}
+    <div role="alert" class="{{groupClass}} {{groupTypeClassPrefix}}{{bucket.type}}">
+        <ul>
+            {{#each bucket.messages as |msg|}}
+                <li>{{msg}}</li>
+            {{/each}}
+        </ul>
+    </div>
+{{/each}}

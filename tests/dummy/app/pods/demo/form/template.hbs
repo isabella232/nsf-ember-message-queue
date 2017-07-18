@@ -1,0 +1,83 @@
+<p class="text-muted"><small>Target #0 (demo/form.hbs):</small></p>
+{{message-container data-test-id='message-container-form'}}
+
+<div class="panel panel-default">
+    <div class="panel-body form-horizontal">
+        <div class="form-group">
+            <label for="message-input" class="col-sm-2 control-label">Message Text</label>
+            <div class="col-sm-10">
+                {{input type='text' value=messageText class='form-control' id='message-input' placeholder=messagePlaceholder}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message-type" class="col-sm-2 control-label">Message Type</label>
+            <div class="col-sm-4">
+                <select id="message-type" class="form-control" onchange={{action (mut messageType) value="target.value"}}>
+                    <option value="">Default</option>
+                    <option value="info">Info</option>
+                    <option value="success">Success</option>
+                    <option value="warning">Warning</option>
+                    <option value="danger">Danger</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message-trigger" class="col-sm-2 control-label">Trigger On</label>
+            <div class="col-sm-4">
+                <select id="message-trigger" class="form-control" onchange={{action (mut triggerType) value="target.value"}}>
+                    <option value="transition">Transition</option>
+                    <option value="now">Now</option>
+                </select>
+
+                <label class="checkbox-inline {{if areNowOptionsDisabled 'disabled'}}">
+                    {{input type='checkbox' disabled=areNowOptionsDisabled checked=updateExisting}} Update Existing
+                </label>
+
+                <label class="checkbox-inline {{if areNowOptionsDisabled 'disabled'}}">
+                    {{input type='checkbox' disabled=areNowOptionsDisabled checked=clearExisting}} Clear Existing
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message-target" class="col-sm-2 control-label">Target</label>
+            <div class="col-sm-4">
+                <select id="message-target" class="form-control" onchange={{action (mut targetContainer) value="target.value"}}>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message-lifespan" class="col-sm-2 control-label">Lifespan</label>
+            <div class="col-sm-4">
+                <select id="message-lifespan" class="form-control" onchange={{action (mut lifespan) value="target.value"}}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="4">5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message-waitTime" class="col-sm-2 control-label">Wait Time</label>
+            <div class="col-sm-4">
+                <select id="message-waitTime" class="form-control" onchange={{action (mut waitTime) value="target.value"}} disabled={{areTransitionOptionsDisabled}}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="4">5</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary pull-right" onclick={{action 'addMessage'}}>Add</button>
+    </div>
+</div>
